@@ -21,6 +21,7 @@ gem 'jquery-rails'
 group :development do
 	gem 'autotest'
 	gem 'ZenTest'
+	gem 'autotest-rails-pure'
 	gem 'rspec-rails', "~> 2.8"
 end
 
