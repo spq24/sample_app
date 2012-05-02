@@ -111,3 +111,14 @@ footer nav {
 	float: none;
 }
 
+/* User Show */
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  padding: 10px;
+  height: auto;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
