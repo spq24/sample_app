@@ -30,4 +30,5 @@ group :test do
 #	gem 'rb-fchange', '0.0.5'
 #	gem 'rb-notifu', '0.0.4'
 #	gem 'win32console', '1.3.0'
+	gem 'factory_girl_rails', '1.4.0'
 end
