@@ -93,7 +93,45 @@ end
         post :create, :user => @attr
         response.should redirect_to(user_path(assigns(:user)))
       end
-      
+
+      it "should have a welcome message" do
+        post :create, :user => @attr
+        flash[:success].should =~ /welcome to the sample app/i
+      end
+
+      it "should sign the user in" do
+        post :create, :user => @attr
+        controller.should be_signed_in
+      end
+    end
+  end
+
+  describe "signin" do
+    
+    describe "failure" do
+        it "should not sign a user in" do
+          visit signin_path
+          fill_in "Email", :with => ""
+          fill_in "Password", :with => ""
+          click_button
+          response.should have_selector('div.flash.error', :content => "Invalid")
+
+          response.should render_template('sessions/new')
+        end
+    end
+
+    describe "success" do 
+      it "should sign a user in and out" do
+        user = Factor(:user)
+        visit signin_path
+        fill_in "Email", :with => user.email
+        fill_in "Password" :with => user.password
+        click_button
+        controller.should be_signed_in
+        click_link "Sign Out"
+        controller.should_not be_signed_in
+       end
+      end
     end
   end
 end

@@ -13,3 +13,7 @@ require 'spec_helper'
 describe SessionsHelper do
   pending "add some examples to (or delete) #{__FILE__}"
 end
+
+def test_sign_in(user)
+	controller.current_user = user
+end
