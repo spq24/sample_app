@@ -8,6 +8,8 @@ gem 'sqlite3'
 
 gem 'gravatar_image_tag'
 
+gem 'will_paginate'
+
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -23,6 +25,7 @@ group :development do
 	gem 'autotest-rails-pure'
 	gem 'rspec-rails', '2.9.0'
 	gem 'annotate', '~> 2.4.1.beta'
+	gem 'faker'
 end
 
 group :test do
