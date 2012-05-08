@@ -15,5 +15,8 @@ class Micropost < ActiveRecord::Base
 
 	belongs_to :user
 
+	validates :content, :prescense => true, :length => { :maximum => 140 }
+	validates :user_id, :prescense => true
+
 	default_scope :order => 'microposts.created_at DESC'
 end
