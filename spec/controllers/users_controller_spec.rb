@@ -50,6 +50,19 @@ describe UsersController do
         response.should have_selector('a', :href => "/users?page=2", :content => "2")
         response.should have_selector('a', :href => "/users?page=2", :content => "Next")
       end
+    
+      it "should have a delete links for admins" do
+        @user.toggle!(:admin)
+        other_user = User.all.second
+        get :index
+        response.should have_selector('a', :href => user_path(other_user), :content => "delete")
+      end
+
+      it "should not have delete links for non-admins"
+        other_user = User.all.second
+        get :index
+        response.should_not have_selector('a', :href => user_path(other_user), :content => "delete")
+      end
     end
   end
   
