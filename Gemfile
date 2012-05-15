@@ -29,7 +29,7 @@ group :development do
 end
 
 group :test do
-#	gem 'rspec-rails', '2.9.0'
+	gem 'rspec-rails', '2.9.0'
 #	gem 'capybara', '1.1.2'
 #	gem 'rb-fchange', '0.0.5'
 #	gem 'rb-notifu', '0.0.4'
